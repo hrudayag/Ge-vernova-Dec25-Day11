@@ -19,6 +19,9 @@ public class UserRegistration {
     public static boolean validatePasswordRule2(String password) {
         return password.matches(".*[A-Z].*");
     }
+    public static boolean validatePasswordRule3(String password) {
+        return password.matches(".*[0-9].*");
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -42,6 +45,10 @@ public class UserRegistration {
         System.out.println(validatePasswordRule2(password)
                 ? "Password Rule2 Passed"
                 : "Password Rule2 Failed");
+        System.out.println(validatePasswordRule3(password)
+                ? "Password Rule3 Passed"
+                : "Password Rule3 Failed");
+
 
         sc.close();
 
