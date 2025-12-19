@@ -10,6 +10,10 @@ public class UserRegistration {
         String emailRegex = "^[a-zA-Z0-9]+([.][a-zA-Z0-9]+)?@[a-zA-Z0-9]+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?$";
         return email.matches(emailRegex);
     }
+    public static boolean validateMobile(String mobile) {
+        return mobile.matches("[0-9]{2}\\s[0-9]{10}");
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter First Name: ");
@@ -18,9 +22,12 @@ public class UserRegistration {
         String lastName = sc.nextLine();
         System.out.print("Enter Email: ");
         String email = sc.nextLine();
+        System.out.print("Enter Mobile Number: ");
+        String mobile = sc.nextLine();
         System.out.println(validateFirstName(firstName) ? "Valid First Name" : "Invalid First Name");
         System.out.println(validateLastName(lastName) ? "Valid Last Name" : "Invalid Last Name");
         System.out.println(validateEmail(email) ? "Valid Email" : "Invalid Email");
+        System.out.println(validateMobile(mobile) ? "Valid Mobile Number" : "Invalid Mobile Number");
         sc.close();
     }
 }
