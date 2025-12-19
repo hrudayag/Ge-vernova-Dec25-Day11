@@ -13,6 +13,9 @@ public class UserRegistration {
     public static boolean validateMobile(String mobile) {
         return mobile.matches("[0-9]{2}\\s[0-9]{10}");
     }
+    public static boolean validatePasswordRule1(String password) {
+        return password.length() >= 8;
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -24,10 +27,15 @@ public class UserRegistration {
         String email = sc.nextLine();
         System.out.print("Enter Mobile Number: ");
         String mobile = sc.nextLine();
+        System.out.print("Enter Password: ");
+        String password = sc.nextLine();
         System.out.println(validateFirstName(firstName) ? "Valid First Name" : "Invalid First Name");
         System.out.println(validateLastName(lastName) ? "Valid Last Name" : "Invalid Last Name");
         System.out.println(validateEmail(email) ? "Valid Email" : "Invalid Email");
         System.out.println(validateMobile(mobile) ? "Valid Mobile Number" : "Invalid Mobile Number");
+        System.out.println(validatePasswordRule1(password)
+                ? "Password Rule1 Passed"
+                : "Password Rule1 Failed");
         sc.close();
     }
 }
