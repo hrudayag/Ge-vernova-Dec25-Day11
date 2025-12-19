@@ -32,7 +32,37 @@ public class UserRegistration {
         }
         return count == 1;
     }
+    public static void validateEmailSamples() {
+        String[] emails = {
+                "abc@yahoo.com",
+                "abc-100@yahoo.com",
+                "abc.100@yahoo.com",
+                "abc111@abc.com",
+                "abc-100@abc.net",
+                "abc.100@abc.com.au",
+                "abc@1.com",
+                "abc@gmail.com.com",
+                "abc+100@gmail.com",
+                "abc",
+                "abc@.com.my",
+                "abc123@gmail.a",
+                "abc123@.com",
+                "abc123@.com.com",
+                ".abc@abc.com",
+                "abc()*@gmail.com",
+                "abc@%*.com",
+                "abc..2002@gmail.com",
+                "abc.@gmail.com",
+                "abc@abc@gmail.com",
+                "abc@gmail.com.1a",
+                "abc@gmail.com.aa.au"
+        };
 
+        for (String email : emails) {
+            System.out.println(email + " -> " +
+                    (validateEmail(email) ? "Valid" : "Invalid"));
+        }
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter First Name: ");
@@ -61,10 +91,8 @@ public class UserRegistration {
         System.out.println(validatePasswordRule4(password)
                 ? "Password Rule4 Passed"
                 : "Password Rule4 Failed");
-
-
-
+        System.out.println("\nEmail Sample Validation:");
+        validateEmailSamples();
         sc.close();
-
     }
 }
